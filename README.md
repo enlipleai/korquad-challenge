@@ -38,7 +38,7 @@ python3 train.py \
   --max_seq_length=512 \
   --max_query_length=96 \
   --max_answer_length=30 \
-  --doc_stride=$BERT_128 \
+  --doc_stride=128 \
   --train_batch_size=16 \
   --learning_rate=5e-5 \
   --num_train_epochs=4.0 \
@@ -54,7 +54,7 @@ python3 eval.py \
   --max_seq_length=512 \
   --max_query_length=96 \
   --max_answer_length=30 \
-  --doc_stride=$BERT_128 \
+  --doc_stride=128 \
   --train_batch_size=16 \
   --n_best_size=20 \
   --seed=42
