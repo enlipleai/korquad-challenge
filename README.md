@@ -10,6 +10,7 @@ Model의 Capacity가 커질수록 성능면에서는 이점이 있을 수 있으
 Baseline Code는 해당 repository와 Google Colab 환경에서 제공하며 둘 중 편한것을 골라 사용하시면 됩니다.
 * Colab Link:
   [Baseline Code in Colab](https://colab.research.google.com/drive/1n471tMpGoYlmoJpnSxTAZD_W2HKI1XnI)
+  (Google Chrome 브라우저 사용 권장)
   * 밑의 Model 및 Vocab을 다운받아 Google Drive에 업로드한뒤 Colab에서 Google Drive를 마운트하여 사용하시면 됩니다.
 
 Model 및 Vocab은 다음 링크를 통해 다운로드 받을 수 있습니다.  
