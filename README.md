@@ -8,11 +8,12 @@ Model의 Capacity가 커질수록 성능면에서는 이점이 있을 수 있으
 그래서 Fine-tuning을 빠르게 수행할 수 있고 [Google Colab](https://colab.research.google.com/) 환경에서도 가능하도록 대회의 Pre-train Model은 Small Size로 진행하게 되었습니다.
 
 Baseline Code는 해당 repository와 Google Colab 환경에서 제공하며 둘 중 편한것을 골라 사용하시면 됩니다.
-* Colab Link: [Baseline Code Colab](https://colab.research.google.com/drive/1n471tMpGoYlmoJpnSxTAZD_W2HKI1XnI)
+* Colab Link:
+  [Baseline Code in Colab](https://colab.research.google.com/drive/1n471tMpGoYlmoJpnSxTAZD_W2HKI1XnI)
   * 밑의 Model 및 Vocab을 다운받아 Google Drive에 업로드한뒤 Colab에서 Google Drive를 마운트하여 사용하시면 됩니다.
 
 Model 및 Vocab은 다음 링크를 통해 다운로드 받을 수 있습니다.  
-* [**Small Model**](https://drive.google.com/open?id=13D9Fnnl0ra1qjPgtSWdp1-xIs6DfJ7Zg)
+* [**Small Model  &  Vocab**](https://drive.google.com/open?id=13D9Fnnl0ra1qjPgtSWdp1-xIs6DfJ7Zg)
 
 
 ## Model Detail
@@ -22,7 +23,7 @@ Baseline과 다른 점은 다음을 참고해주시면 감사하겠습니다.
 |                 | Baseline                         | 대회제공모델                    |
 |:----------------|:---------------------------------|:-------------------------------|
 | MLM Strategy    | 15% random or whole word masking | n-gram masking                 |
-| Additional Task | NSP(Next Sentence Prediction)     | SOP(Sentence Order Prediction) |
+| Additional Task | NSP(Next Sentence Prediction)    | SOP(Sentence Order Prediction) |
 | Sub-word Level  | Space-level                      | Morpheme-Level                 |
 
 * 또한 Google에서 공개한 BERT Small Size는 **Hidden:512, Layer:4, Attention-Head:8**로 세팅이 되어있지만 본 repository에서 제공하는 Small Size Model은 **Hidden:256, Layer:12, Attention-Head:8** 입니다.
