@@ -12,7 +12,7 @@ Baseline Code는 해당 repository와 Google Colab 환경에서 제공하며 둘
   * 밑의 Model 및 Vocab을 다운받아 Google Drive에 업로드한뒤 Colab에서 Google Drive를 마운트하여 사용하시면 됩니다.
 
 Model 및 Vocab은 다음 링크를 통해 다운로드 받을 수 있습니다.  
-[**Small Model**](https://drive.google.com/open?id=13D9Fnnl0ra1qjPgtSWdp1-xIs6DfJ7Zg)
+* [**Small Model**](https://drive.google.com/open?id=13D9Fnnl0ra1qjPgtSWdp1-xIs6DfJ7Zg)
 
 
 ## Model Detail
