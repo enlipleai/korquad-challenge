@@ -60,6 +60,11 @@ python3 eval.py \
   --seed=42
 ```
 
+* Result
+```shell
+{"exact_match": 78.6802909594735, "f1": 88.19766039994913}
+```
+
 
 ## Reference
 * [Google BERT](https://github.com/google-research/bert)
