@@ -1,7 +1,7 @@
-![logos](./img/logos.png)
+<p align="center"><img src="./img/logos.png"></p>
 
 # 한국어 AI 언어모델 튜닝대회
-본 repository는 [한국어 AI 언어모델 튜닝대회](https://challenge.enliple.com/)에서 사용하는 Small Size의 사전학습 언어모델과 Baseline Code를 제공하기 위해 만들어졌습니다.  
+본 repository는 한국어 AI 언어모델 튜닝대회에서 사용하는 Small Size의 사전학습 언어모델과 Baseline Code를 제공하기 위해 만들어졌습니다.  
 대회에 관한 자세한 설명은 [한국어 AI 언어모델 튜닝대회](https://challenge.enliple.com/)를 참고바랍니다.
 
 Model의 Capacity가 커질수록 성능면에서는 이점이 있을 수 있으나 그만큼 고사양의 Machine이 필요합니다.  
@@ -22,10 +22,10 @@ Baseline과 다른 점은 다음을 참고해주시면 감사하겠습니다.
 |                 | Baseline                         | 대회제공모델                    |
 |:----------------|:---------------------------------|:-------------------------------|
 | MLM Strategy    | 15% random or whole word masking | n-gram masking                 |
-| Additional Task | NSP(Next Sentence Prediction     | SOP(Sentence Order Prediction) |
+| Additional Task | NSP(Next Sentence Prediction)     | SOP(Sentence Order Prediction) |
 | Sub-word Level  | Space-level                      | Morpheme-Level                 |
 
-* 또한 Google에서 공개한 BERT Small Size는 Hidden:512, Layer:4, Attention-Head:8로 세팅이 되어있지만 본 repository에서 제공하는 Small Size Model은 Hidden: 256, Layer: 12, Attention-Head: 8 입니다.
+* 또한 Google에서 공개한 BERT Small Size는 **Hidden:512, Layer:4, Attention-Head:8**로 세팅이 되어있지만 본 repository에서 제공하는 Small Size Model은 **Hidden:256, Layer:12, Attention-Head:8** 입니다.
 
 
 ## Reference
