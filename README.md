@@ -27,6 +27,39 @@ Baseline과 다른 점은 다음을 참고해주시면 감사하겠습니다.
 
 * 또한 Google에서 공개한 BERT Small Size는 **Hidden:512, Layer:4, Attention-Head:8**로 세팅이 되어있지만 본 repository에서 제공하는 Small Size Model은 **Hidden:256, Layer:12, Attention-Head:8** 입니다.
 
+## Train & Evaluation Scripts
+* Train
+```shell
+python3 train.py \
+  --output_dir=output \
+  --checkpoint=pretrain_ckpt/bert_small_ckpt.bin \
+  --model_config=data/bert_small.json \
+  --train_file=data/KorQuAD_v1.0_train.json \
+  --max_seq_length=512 \
+  --max_query_length=96 \
+  --max_answer_length=30 \
+  --doc_stride=$BERT_128 \
+  --train_batch_size=16 \
+  --learning_rate=5e-5 \
+  --num_train_epochs=4.0 \
+  --seed=42
+```
+
+* Evaluation
+```shell
+python3 eval.py \
+  --checkpoint=output/korquad_3.bin \
+  --output_dir=debug \
+  --predict_file=data/KorQuAD_v1.0_dev.json \
+  --max_seq_length=512 \
+  --max_query_length=96 \
+  --max_answer_length=30 \
+  --doc_stride=$BERT_128 \
+  --train_batch_size=16 \
+  --n_best_size=20 \
+  --seed=42
+```
+
 
 ## Reference
 * [Google BERT](https://github.com/google-research/bert)
