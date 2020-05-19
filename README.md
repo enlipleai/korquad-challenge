@@ -57,7 +57,7 @@ python3 eval.py \
   --max_query_length=96 \
   --max_answer_length=30 \
   --doc_stride=128 \
-  --train_batch_size=16 \
+  --batch_size=16 \
   --n_best_size=20 \
   --seed=42
 ```
