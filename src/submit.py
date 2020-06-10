@@ -1,15 +1,10 @@
 # coding=utf-8
 from __future__ import absolute_import, division, print_function
 
-import collections
-import json
 import logging
-import math
 import os
 import random
 import sys
-
-from io import open
 
 import numpy as np
 import torch
@@ -17,9 +12,9 @@ import torch
 from torch.utils.data import (DataLoader, SequentialSampler, TensorDataset)
 from tqdm import tqdm
 
-from models.modeling import QuestionAnswering, Config
+from models.modeling_bert import QuestionAnswering, Config
 from utils.tokenization import BertTokenizer
-from utils.korquad_utils import read_squad_examples, convert_examples_to_features, write_predictions
+from utils.korquad_utils import read_squad_examples, convert_examples_to_features, write_predictions, RawResult
 
 MODEL_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
 CHK_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "korquad_3.bin")
@@ -54,7 +49,7 @@ def main(input, output):
     if n_gpu > 0:
         torch.cuda.manual_seed_all(seed)
 
-    tokenizer = FullTokenizer(vocab_file=VOCAB_PATH, max_len=max_seq_length, do_basic_tokenize=True)
+    tokenizer = BertTokenizer(vocab_file=VOCAB_PATH, max_len=max_seq_length, do_basic_tokenize=True)
     eval_examples = read_squad_examples(input_file=input, is_training=False, version_2_with_negative=False)
     eval_features = convert_examples_to_features(
         examples=eval_examples,
@@ -102,11 +97,10 @@ def main(input, output):
             all_results.append(RawResult(unique_id=unique_id,
                                          start_logits=start_logits,
                                          end_logits=end_logits))
-    output_prediction_file = os.path.join(output_dir, "predictions.json")
-    output_nbest_file = os.path.join(output_dir, "nbest_predictions.json")
+    output_nbest_file = os.path.join("nbest_predictions.json")
     write_predictions(eval_examples, eval_features, all_results,
                         n_best_size, max_answer_length,
-                        False, output_prediction_file, output_nbest_file,
+                        False, output, output_nbest_file,
                         None, False, False, 0.0)
 
 if __name__ == "__main__":
